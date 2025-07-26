@@ -2,7 +2,7 @@
 
 A NextJS project with zmap integration for network scanning.
 
-![NetZap icon](/netzap.webp)
+![NetZap icon](https://raw.githubusercontent.com/atiilla/netzap/main/netzap.webp)
 
 ## Requirements
 
@@ -12,7 +12,7 @@ A NextJS project with zmap integration for network scanning.
 
 ### Pull from Docker Hub
 ```bash
-docker run -d --name netzap -p 3000:3000 happyhackingspace/netzap:latest
+docker run -d --name netzap -p 3000:3000 atiilla/netzap:latest
 ```
 
 ### Access the Application
@@ -20,13 +20,13 @@ Open your browser and navigate to `http://localhost:3000`
 
 ### Screenshot
 
-![NetZap Application Screenshot](./screenshot.png)
+![NetZap Application Screenshot](https://raw.githubusercontent.com/atiilla/netzap/main/screenshot.png)
 
 ## Manual Setup and Run
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/HappyHackingSpace/NetZap
+   git clone https://github.com/atiilla/NetZap
    cd netzap
    ```
 

@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NPM_FLAGS: "--legacy-peer-deps"
+    container_name: netzap
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    # Required capabilities for zmap to work properly
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    networks:
+      - netzap_network
+      
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: netzap-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    # Required capabilities for zmap to work properly
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    networks:
+      - netzap_network
+
+networks:
+  netzap_network:
+    driver: bridge
